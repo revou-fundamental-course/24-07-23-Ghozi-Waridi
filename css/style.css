@@ -1,0 +1,646 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	list-style: none;
+	scroll-behavior: smooth;
+}
+:root{
+	--bg-color: #2a2a2a;
+	--second-bg-color: #202020;
+	--text-color: #fff;
+	--second-color: #ccc;
+	--main-color: #ff4d05;
+
+}
+body{
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+span{
+	color: var(--main-color);
+}
+h1.judul{
+	font-size: 50px;
+	text-align: center;
+	padding: 100px;
+	font-weight: 60px;
+}
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	padding: 22px 10%;
+	border-bottom: 1px solid transparent;
+	transition: all .45s ease;
+}
+
+.logo{
+	color: var(--text-color);
+	font-size: 35px;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+span{
+	color: var(--main-color);
+}
+.navlist{
+	display: flex;
+	justify-content: space-evenly;
+}
+.navlist a{
+	color: var(--second-color);
+	font-size: 17px;
+	font-weight: 500;
+	margin: 0 25px;
+	transition: all .45s ease;
+}
+.navlist a:hover{
+	color: var(--main-color);
+}
+
+
+header.sticky{
+	background: var(--bg-color);
+	border-bottom: 1px solid #ffffff1a;
+	padding: 12px 12%;
+	backdrop-filter: blur(15px);
+	
+}
+
+.hamburger{
+    cursor: pointer;
+    display: none;
+}
+.hamburger div{
+    background-color: black;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+}
+
+
+
+
+section#home{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+#home .text-judul{
+	position: absolute;
+	z-index: 4;
+	text-align: center;
+	background: linear-gradient(transparent,  #202020);   
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+#home .text-judul h1{
+	font-size: 200px;
+
+}
+
+
+.img-slider{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-color: #202020;
+	overflow: hidden;
+}
+.img-slider .slide{
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	/* height: 800px; */
+	clip-path: circle(0% at 0 50%);
+	/* overflow: hidden; */
+}
+
+.img-slider .slide.active{
+	clip-path: circle(150% at 0 50%);
+	transition: 2s;
+	transition-property: clip-path;
+
+}
+.img-slider .slide img{
+	z-index: 1;
+	width: 100%;
+}
+
+.img-slider .navigation{
+	z-index: 2;
+	position: absolute;
+	display: flex;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.img-slider .navigation .btn{
+	background-color: red;
+	width: 12px;
+	height: 12px;
+	margin: 10px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.img-slider .navigation .btn.active{
+	background-color: #2696E9;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+section.kota{
+	display: flex;
+	justify-content: center;
+}
+.kota .cardKota{
+	display: flex;
+	justify-content: center;
+	width: 800px;
+	gap: 50px;
+	padding: 20px;
+	border-radius: 15px;
+	position: absolute;
+	top: 85vh;
+	z-index: 5;
+}
+.kota .cardKota .card{
+
+
+	width: 200px;
+	height: 200px;
+	/* padding: 15px; */
+	border-radius: 10px;
+	transition: transform .45s ease;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+
+
+	box-shadow:0 25px 25px rgb(0,0,0,0.1);
+	border: 1px solid rgba(255,255,255,0.5);
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	backdrop-filter: blur(25px);
+}
+.kota .cardKota .card img{
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	height: 100%;
+	opacity: 70%;
+	}
+.kota .cardKota .card:hover{
+	transform: translateY(-8px);
+}
+.kota .cardKota .card h1{
+	letter-spacing: 4px;
+	font-weight: 600;
+	z-index: 2;
+	text-align: center;
+	color: #ff4d05;
+
+
+
+
+}
+
+
+section#about{
+	/* height: 100vh; */
+	background-color: var(--second-bg-color);
+	padding: 12% 12% 5% 12%;
+}
+#about .container-about{
+	display: flex;
+	justify-content: space-between;
+	height: 95vh;
+	align-items: center;
+}
+#about .container-about .text-about{
+	width: 40%;
+	left: 0px;
+}
+#about .container-about .text-about h1{
+	font-size: 50px;
+	margin-bottom: 20px;
+	letter-spacing: 7px;
+	/* font-weight: 700; */
+}
+#about .container-about .text-about p{
+	font-size: 20px;
+	color: var(--second-color);
+	line-height: 30px;
+
+}
+#about .container-about .img-about{
+	width: 50%;
+	text-align: center;
+
+}
+#about .container-about .img-about img{
+	width: 60%;
+	border-radius: 10px;
+}
+
+
+/* ========== cagar budaya ========== */
+
+.card-section{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 200px;
+	flex-direction: column;
+}
+.card-section h1.judul-cagar{
+	margin: 100px 0;
+	font-size: 40px;
+}
+#cagar .container{
+	width: 75%;
+	display: flex;
+	justify-content: space-between;
+
+
+}
+
+#cagar .container .card .gambar{
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 10px;
+
+}
+#cagar .container .card .gambar img{
+	width: 100%;
+	border-radius: 10px;
+	transition: transform .5s;
+	
+}
+#cagar .container .card h1{
+	font-size: 30px;
+	margin-top: 10px;
+	letter-spacing: 5px;
+	font-weight: bold;
+	/* line-height: 34px; */
+}
+#cagar .container .card .gambar img:hover{
+	transform: scale(115%);
+}
+
+
+
+/* ========== contact ========== */
+#contact{
+	align-items: center;
+	display: flex;
+	padding: 100px;
+	background-image: url('../assets/contact.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+}
+
+
+.contact-form form{
+	position: relative;
+}
+.contact-form form input,
+form textarea{
+	width: 100%;
+	padding: 14px;
+	background: var(--bg-color);
+	color: var(--text-color);
+	border: none;
+	outline: none;
+	font-size: 15px;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+.contact-form textarea{
+	resize: none;
+	height: 240px;
+}
+.contact-form .submit{
+	/* display: inline-block; */
+	font-size: 16px;
+	background: var(--main-color);
+	color: var(--text-color);
+	width: 160px;
+	transition: all .45s ease;
+}
+.contact-form .submit:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+#package{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 100px;
+	flex-direction: column;
+}
+#package .container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+	flex-wrap: wrap;
+	width: 75%;
+}
+#package .container .card{
+	width: 250px;
+	height: 250px;
+	border-radius: 10px;
+	background-color: #202020;
+	padding: 20px;
+}
+#package .container .card h1{
+	font-size: 40px;
+	margin-top: 10px;
+
+}
+#package .container .card p{
+	margin-top: 30px;
+	font-size: 20px;
+}
+
+#customer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #202020;
+	flex-direction: column;
+	padding-bottom: 100px;
+
+}
+#customer .container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+	/* height: 50%; */
+}
+
+#customer .container .card{
+
+	text-align: center;
+	border-radius: 10px;
+	background-color: #2a2a2a;
+	padding: 20px;
+	margin-left: 20px;
+	/* display: inline;s */
+}
+#customer .container .card img{
+	border-radius: 50%;
+}
+#customer .container .card h1{
+	margin-top: 10px;
+
+}
+#customer .container .card p{
+	margin-top: 30px;
+}
+
+footer{
+	width: 100%;
+	padding: 20px 12%; 
+}
+
+/* responsive */
+@media (max-width: 1480px) {
+	/* header{
+		background-color: red;
+	} */
+	.kota .cardKota{
+		top: 95vh;
+	}
+	#about .container-about{
+		height: 100vh;
+	}
+	#about .container-about .text-about{
+		width: 50%;
+	}
+	#about .container-about .img-about{
+
+		text-align: end;
+	}
+	#about .container-about .img-about img{
+		width: 65%;
+	}
+	#cagar .container .card .gambar{
+		width: 250px;
+		height: 250px;
+	}
+	#package .container{
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+}
+
+@media (max-width: 1100px){
+	/* header{
+		background-color: blue;
+	} */
+	.navlist a{
+		color: var(--second-color);
+		font-size: 17px;
+		margin: 0 15px;
+	}
+	.img-slider .slide{
+		text-align: center;
+		justify-content: center;
+	}
+	.img-slider .slide img{
+		width: auto;
+		text-align: center;
+		position: relative;
+		bottom: unset;
+		right: 400px;
+		}
+	#about .container-about{
+		margin-top: 200px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	#about .container-about{
+		height: 150vh;
+	}
+	#about .container-about .text-about{
+		width: 90%;
+		text-align: justify;
+		left: 0px;
+	}
+	#about .container-about .img-about{
+		width: 90%;
+		text-align: center;
+	}
+	#cagar .container{
+		width: 90%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		
+	}
+	#cagar .container .card{
+		margin: 50px;
+	}
+	#customer .container{
+		flex-wrap: wrap;
+	}	
+	#package .container{
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	#customer .container .card{
+		margin-bottom: 20px;
+	}
+
+}
+
+
+@media (max-width:840px){
+
+
+	.navlist{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 2rem;
+        height: 0px;
+        top: 60px;
+        background-color: var(--bg-color);
+        align-items: center;
+        width: 300px;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        overflow: hidden;
+        border-radius: 20px;
+    }
+	.nav-active{
+        width: unset;
+        left: 2rem;
+        height: 52vh;
+
+    }
+	.hamburger{
+        display: block;
+    }
+	h1.judul{
+		font-size: 50px;
+		text-align: center;
+		padding: 50px;
+		font-weight: 60px;
+	}
+
+	#home .text-judul h1{
+		font-size: 50px;
+	}
+	#home .text-judul{
+		/* height: 30vh; */
+		background: linear-gradient(transparent,  #2a2a2a);   
+
+	}
+	.img-slider .slide{
+		text-align: center;
+		justify-content: center;
+	}
+	.img-slider .slide img{
+		width: auto;
+		position: relative;
+		bottom: unset;
+		right: 400px;
+		
+	}
+
+	section.kota{
+		margin:30px;
+	}
+	.kota .cardKota{
+		flex-direction: column;
+		align-items: center;
+		top: 100px;
+		position:static;
+	}
+	.kota .cardKota .card{
+		width: 300px;
+		height: 300px;
+	}
+
+	section#about{
+		padding: 0px 10%;
+	}
+	#about .container-about .img-about{
+		width: 80%;
+	}
+	#about .container-about .img-about img{
+		width: 100%;
+	}
+	.card-section{
+		margin-bottom: 100px;
+	}
+	.card-section h1.judul-cagar{
+		margin: 100px 0 50px 0;
+		font-size: 40px;
+	}
+	#cagar .container .card .gambar{
+		width: 350px;
+		height: 350px;	
+	}
+	#cagar .container .card h1{
+		font-size: 40px;
+		margin-top: 10px;
+	}
+	#contact{
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	#package{
+		padding: 30px;
+	}
+	#package .container{
+		gap: 50px;
+	}
+	#customer .container{
+		flex-direction: column;
+		
+	}
+	#customer .container .card{
+		margin-bottom: 20px;
+	}
+}
+
+/* @media (min-width: 340px){
+	body{
+		background-color: red;
+	}
+} */
+
