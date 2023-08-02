@@ -113,7 +113,23 @@ section#home{
 	font-size: 200px;
 
 }
-
+#home .text-judul .sosial-media{
+	margin-top: 15px;
+}
+#home .fa {
+	padding: 15px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px;
+	color: var(--second-color);
+	border-radius: 10px;
+}
+.fa:hover{
+	background-color: #ff4d05;
+	
+}
 
 .img-slider{
 	position: relative;
@@ -283,8 +299,6 @@ section#about{
 	width: 75%;
 	display: flex;
 	justify-content: space-between;
-
-
 }
 
 #cagar .container .card .gambar{
@@ -310,6 +324,10 @@ section#about{
 #cagar .container .card .gambar img:hover{
 	transform: scale(115%);
 }
+#cagar .container .card .material-icons{
+	font-size: 18px;
+	margin: 5px;
+}
 
 
 
@@ -329,13 +347,29 @@ section#about{
 .contact-form form{
 	position: relative;
 }
+.contact-form form input.succes{
+	border: green 3px solid;
+	
+	
+}
+.contact-form form input.eror{
+	border: red 3px solid;
+}
+.contact-form form textarea.succes{
+	border: green 3px solid;
+	
+	
+}
+.contact-form form textarea.eror{
+	border: red 3px solid;
+}
 .contact-form form input,
 form textarea{
 	width: 100%;
 	padding: 14px;
 	background: var(--bg-color);
 	color: var(--text-color);
-	border: none;
+	/* border: none; */
 	outline: none;
 	font-size: 15px;
 	border-radius: 8px;
@@ -356,6 +390,11 @@ form textarea{
 .contact-form .submit:hover{
 	transform: scale(1.1);
 	cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 #package{
@@ -431,6 +470,27 @@ form textarea{
 footer{
 	width: 100%;
 	padding: 20px 12%; 
+	display: flex;
+	justify-content: space-between;
+}
+footer p{
+	margin: 5px;
+	padding: 15px;
+
+}
+.fa {
+	padding: 15px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px;
+	color: var(--second-color);
+	border-radius: 10px;
+}
+.fa:hover{
+	background-color: #ff4d05;
+	
 }
 
 /* responsive */
@@ -635,6 +695,9 @@ footer{
 	}
 	#customer .container .card{
 		margin-bottom: 20px;
+	}
+	footer{
+		flex-direction: column;
 	}
 }
 

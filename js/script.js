@@ -61,3 +61,78 @@ var repeat = function(activeClass){
 repeat()
 
 
+const nama = document.querySelector('input[type=name]')
+const email = document.querySelector('input[type=email]')
+const phoneNo = document.querySelector('input[type=number]')
+const submit = document.querySelector('input[type=submit]')
+const area = document.querySelector('textarea[name=help]')
+// const form = document.querySelector('form')
+
+
+
+submit.addEventListener('click', (e) => {
+	e.preventDefault()
+
+
+	validationFrom()
+}	
+)
+
+
+const setsucces = (element) => {
+	const inputControl = element
+	inputControl.classList.add('succes')
+	inputControl.classList.remove('eror')
+
+}	
+const seteror = (element) => {
+	const inputControl = element
+	inputControl.classList.add('eror')
+    inputControl.classList.remove('succes')
+
+}	
+
+// Email Validation
+
+
+const isValidEmail = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+const validationFrom = () =>{
+	const valueNama = nama.value
+	const valueEmail = email.value
+	const valueNo = phoneNo.value
+	const valueHelp = area.value 
+	
+
+
+	if(valueNama === '' || valueNama === null){
+		seteror(nama)
+		console.log('red nama')
+	} else {
+		setsucces(nama)
+	}
+	
+	if(valueEmail === '' || !isValidEmail(valueEmail)){
+		seteror(email)
+		console.log('red email')
+	} else {
+		setsucces(email)
+	}
+	
+	if(valueNo === '' || valueNo < 12){
+		seteror(phoneNo)
+	} else{
+		setsucces(phoneNo)
+	}
+
+	if(valueHelp === '' || null){
+		seteror(area)
+	} else{
+		setsucces(area)
+	}
+
+}
+
