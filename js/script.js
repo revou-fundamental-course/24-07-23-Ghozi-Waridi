@@ -61,12 +61,14 @@ var repeat = function(activeClass){
 repeat()
 
 
+
+
+
 const nama = document.querySelector('input[type=name]')
 const email = document.querySelector('input[type=email]')
 const phoneNo = document.querySelector('input[type=number]')
 const submit = document.querySelector('input[type=submit]')
 const area = document.querySelector('textarea[name=help]')
-// const form = document.querySelector('form')
 
 
 
@@ -92,7 +94,6 @@ const seteror = (element) => {
 
 }	
 
-// Email Validation
 
 
 const isValidEmail = email => {
